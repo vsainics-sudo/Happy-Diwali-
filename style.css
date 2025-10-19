@@ -1,0 +1,241 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #ff4500, #ff6b35, #ff8c42, #ffa500, #ff4500);
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    animation: backgroundShift 10s ease-in-out infinite alternate;
+}
+
+@keyframes backgroundShift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.lanterns {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.lantern {
+    width: 80px;
+    height: auto;
+    margin: 0 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.lantern:nth-child(odd) {
+    animation-delay: 1s;
+}
+
+@keyframes flicker {
+    from { transform: scaleY(1); }
+    to { transform: scaleY(1.1); }
+}
+
+@keyframes flame {
+    from { height: 10px; }
+    to { height: 12px; }
+}
+
+.gif-container {
+    margin: 20px 0;
+}
+
+.diwali-gif {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
+    margin: 0 10px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+    to { text-shadow: 0 0 10px #fbbf24, 0 0 20px #fbbf24, 0 0 30px #fbbf24; }
+}
+
+.intro {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.rangoli {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 40px;
+    background: radial-gradient(circle, #fbbf24, #f59e0b, #d97706);
+    border-radius: 50%;
+    position: relative;
+    animation: rotate 10s linear infinite;
+}
+
+.rangoli::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #3b82f6, #1e3a8a);
+}
+
+.rangoli::after {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    right: 40px;
+    bottom: 40px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fbbf24, #f59e0b);
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.messages {
+    margin-bottom: 40px;
+}
+
+button {
+    background: #fbbf24;
+    color: #1e3a8a;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #f59e0b;
+}
+
+.message-display {
+    margin: 20px 0;
+    font-size: 1.1em;
+    min-height: 50px;
+}
+
+.slideshow {
+    margin-top: 40px;
+}
+
+.slide-container {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.fireworks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.firework {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: #fbbf24;
+    border-radius: 50%;
+    animation: burst 2s ease-out infinite;
+}
+
+@keyframes burst {
+    0% { transform: scale(0); opacity: 1; }
+    50% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(2); opacity: 0; }
+}
+
+.heart {
+    position: fixed;
+    top: 100%;
+    font-size: 2em;
+    animation: floatUp linear infinite;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+
+.decorative-stars {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.star {
+    font-size: 2em;
+    margin: 0 10px;
+    animation: twinkle 1.5s ease-in-out infinite;
+}
+
+.star:nth-child(odd) {
+    animation-delay: 0.5s;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.2); }
+}
